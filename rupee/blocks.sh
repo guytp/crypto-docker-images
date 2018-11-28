@@ -1,2 +1,4 @@
 #!/bin/bash
-docker exec rupee /app/blocks.sh
+cd /app
+main="$(./bitcoin-cli -conf=/app/.RupeeCore/Rupee.conf -rpcclienttimeout=5 getblockcount 2>/dev/null)"
+echo "MainNet: $main"
