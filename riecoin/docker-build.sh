@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --tag riecoin:latest src/
+docker build --tag riecoin:latest .
