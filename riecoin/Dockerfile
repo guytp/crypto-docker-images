@@ -2,7 +2,7 @@ FROM cryptobuild:latest AS base
 
 FROM base AS build
 WORKDIR /src
-RUN git clone https://github.com/guytp/vcash.git .
+RUN git clone https://github.com/guytp/riecoin.git . 
 RUN ./autogen.sh ; ./configure --disable-wallet --disable-tests --without-miniupnpc --without-gui ; make -j8
 
 FROM build AS publish
