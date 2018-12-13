@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t cryptobuild:latest /root/crypto-build
+docker build -t cryptobuild:latest .
 
