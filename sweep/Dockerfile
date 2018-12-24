@@ -4,8 +4,8 @@ FROM base AS build
 WORKDIR /src
 RUN git clone https://github.com/chainworksindustries/sweepstakecoin-wip.git .
 RUN cd /src ; git checkout 2cc44248478fb5878e61df553a1ce4b0dceb11b5
-RUN cd /src/src/leveldb ; chmod +x build_detect_platform ; make libleveldb.a libmemenv.a -j8
-RUN cd /src/src ; make -f makefile.unix USE_UPNP=- -j8
+RUN cd /src/src/leveldb ; chmod +x build_detect_platform ; make libleveldb.a libmemenv.a -j56
+RUN cd /src/src ; make -f makefile.unix USE_UPNP=- -j56
 
 FROM build AS publish
 WORKDIR /app
