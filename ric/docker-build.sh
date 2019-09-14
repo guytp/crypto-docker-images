@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --tag riecoin:latest .
+docker build --no-cache --tag riecoin:latest .
