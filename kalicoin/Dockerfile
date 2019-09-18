@@ -7,7 +7,7 @@ RUN cd src ; make -f makefile.unix
 
 FROM build AS publish
 WORKDIR /app
-COPY --from=build /src/src/kalicoind ./
+COPY --from=build /src/src/kalicoind ./kalid
 COPY bitcoin-cli ./
 COPY *.sh ./
 RUN chown -Rf root.root /app/*

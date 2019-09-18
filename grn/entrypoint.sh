@@ -2,7 +2,7 @@
 cd /app
 while true
 do
-        ./granited -datadir=/app/.granite -conf=/app/.granite/granite.conf
+        ./grnd -datadir=/app/.grn -conf=grn.conf
         echo Infxd terminated, restarting in 10s
         sleep 10
 done

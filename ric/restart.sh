@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /app
-if ! ./riecoin-cli -datadir=/app/.riecoin stop; then
+if ! ./ric-cli -datadir=/app/.riecoin -conf=ric.conf stop; then
   echo "Could not gracefully stop riecoin, force killing"
-  pkill -f -9 ./riecoind
+  pkill -f -9 ./ricd
 fi
 

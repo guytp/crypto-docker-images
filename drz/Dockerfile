@@ -8,7 +8,7 @@ RUN cd /src/src ; make -f makefile.unix -j8
 
 FROM build AS publish
 WORKDIR /app
-COPY --from=build /src/src/droidzd ./droidzd
+COPY --from=build /src/src/droidzd ./drzd
 COPY --from=build /usr/local/lib/libsecp* /usr/local/lib/
 COPY --from=build /usr/local/lib/pkgconfig/libsecp256k1.pc /usr/local/lib/pkgconfig/libsecp256k1.pc
 RUN cd /usr/local/lib ; rm libsecp256k1.so.0 ; ln -s libsecp256k1.so libsecp256k1.so.0 ; ldconfig

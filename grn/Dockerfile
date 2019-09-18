@@ -7,7 +7,7 @@ RUN cd src ; make -f makefile.unix -j8
 
 FROM build AS publish
 WORKDIR /app
-COPY --from=build /src/src/granited ./granited
+COPY --from=build /src/src/granited ./grnd
 COPY bitcoin-cli ./
 COPY *.sh ./
 RUN chown -Rf root.root /app/*

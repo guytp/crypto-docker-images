@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /app
-main="$(./bitcoin-cli -datadir=/app/.droidz -conf=droidz.conf getblockcount)"
+main="$(./bitcoin-cli -datadir=/app/.drz -conf=drz.conf getblockcount)"
 echo "MainNet: $main"

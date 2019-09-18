@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --tag kalicoin:latest .
+docker build --tag kali:latest .

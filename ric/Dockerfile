@@ -7,8 +7,8 @@ RUN ./autogen.sh ; ./configure --disable-wallet --disable-tests --without-miniup
 
 FROM build AS publish
 WORKDIR /app
-COPY --from=build /src/src/riecoind ./
-COPY --from=build /src/src/riecoin-cli ./
+COPY --from=build /src/src/riecoind ./ricd
+COPY --from=build /src/src/riecoin-cli ./ric-cli
 COPY *.sh ./
 RUN chown -Rf root.root /app/*
 

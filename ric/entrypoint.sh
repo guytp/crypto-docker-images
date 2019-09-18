@@ -2,7 +2,7 @@
 cd /app
 while true
 do
-        ./riecoind -datadir=/app/.riecoin
+        ./ricd -datadir=/app/.riecoin -conf=ric.conf
         echo Riecoind terminated, restarting in 10s
         sleep 10
 done
