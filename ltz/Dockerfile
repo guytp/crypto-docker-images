@@ -1,4 +1,4 @@
-FROM cryptobuild:latest AS base
+FROM cryptobuild-1804:latest AS base
 
 FROM base AS publish
 WORKDIR /app
