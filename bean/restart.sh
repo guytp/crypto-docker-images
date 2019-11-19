@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /app
-if ! ./bitcoin-cli -datadir=/app/.bean stop; then
+if ! ./bean-cli -datadir=/app/.evn -conf=bean.conf stop; then
   echo "Could not gracefully stop beand, force killing"
   pkill -f -9 ./beand
 fi

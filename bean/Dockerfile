@@ -1,19 +1,13 @@
-FROM cryptobuild:latest AS base
+FROM cryptobuild-1804:latest AS base
 
-FROM base AS build
-WORKDIR /src
-RUN apt-get update ; apt-get --assume-yes install libdb5.3++-dev
-
-FROM build AS publish
+FROM base AS final
 WORKDIR /app
-COPY ./beand ./
-COPY ./bitcoin-cli ./
-COPY *.sh ./
+RUN wget http://www.beancash.org/downloads/Beancash-Linux64v1122RC.tar.gz
+RUN tar -xzf Beancash-Linux64v1122RC.tar.gz
+COPY ./bean-cli /app/bean-cli
+RUN mv Beancash-Linux64v1122RC/Beancashd /app/beand
+RUN rm -Rf Beancash-Linux64v1122RC.tar.gz Beancash-Linux64v1122RC
 RUN chown -Rf root.root /app/*
-
-FROM publish AS final
-WORKDIR /app
-COPY --from=publish /app ./
-EXPOSE 28113
-EXPOSE 28114
+EXPOSE 28145
+EXPOSE 28146
 ENTRYPOINT ["/app/entrypoint.sh"]

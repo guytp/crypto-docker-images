@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /app
-main="$(./beancash-cli -datadir=/app/.bean getblockcount 2>/dev/null)"
+main="$(./bean-cli -datadir=/app/.bean -conf=bean.conf getblockcount 2>/dev/null)"
 echo "MainNet: $main"
