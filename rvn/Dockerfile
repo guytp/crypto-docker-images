@@ -8,6 +8,7 @@ RUN mv raven-2.5.1.0/bin/raven-cli /app/rvn-cli
 RUN mv raven-2.5.1.0/bin/ravend /app/rvnd
 RUN rm -Rf raven-2.5.1.0-x86_64-linux-gnu.tar.gz raven-2.5.1.0
 RUN chown -Rf root.root /app/*
+COPY *.sh /app/
 EXPOSE 28143
 EXPOSE 28144
 ENTRYPOINT ["/app/entrypoint.sh"]

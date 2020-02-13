@@ -3,10 +3,10 @@ FROM cryptobuild-1804:latest AS base
 FROM base AS final
 WORKDIR /src
 RUN apt-get update ; apt-get install -y libgomp1 
-RUN wget https://github.com/KomodoPlatform/komodo/releases/download/dev-linux-201910052307-6b797669/komodo_linux_dev.tar.gz
-RUN tar -xzf komodo_linux_dev.tar.gz
-RUN mkdir /app ; mv src/komodod /app/kmdd ; mv src/komodo-cli /app/.kmd-cli ; rm -Rf src komodo_linux_dev.tar.gz
+RUN wget https://github.com/KomodoPlatform/komodo/releases/download/0.5.0/komodo_0.5.0_linux.tar.gz
+RUN tar -xzf komodo_0.5.0_linux.tar.gz
 WORKDIR /app
+RUN mv /src/linux64/komodod /app/kmdd ; mv /src/linux64/komodo-cli /app/kmd-cli ; rm -Rf /src
 COPY *.sh ./
 RUN chown -Rf root.root /app/*
 EXPOSE 28135

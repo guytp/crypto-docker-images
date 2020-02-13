@@ -8,6 +8,7 @@ COPY ./clam-cli /app/clam-cli
 RUN mv clam-1.4.17/bin/clamd /app/clamd
 RUN rm -Rf clam-1.4.17-linux64.tar.gz clam-1.4.17
 RUN chown -Rf root.root /app/*
+COPY *.sh /app/
 EXPOSE 28147
 EXPOSE 28148
 ENTRYPOINT ["/app/entrypoint.sh"]
