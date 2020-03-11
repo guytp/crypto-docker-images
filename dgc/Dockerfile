@@ -3,7 +3,7 @@ FROM zapplecoins.azurecr.io/cryptobuild:latest AS base
 FROM base AS final
 WORKDIR /src
 RUN apt-get update ; apt-get install bsdmainutils 
-RUN git clone https://github.com/DGCDev/digitalcoin.git
+RUN git clone https://github.com/lomtax/digitalcoin.git
 RUN cd digitalcoin ; ./autogen.sh ; ./configure
 COPY rpcrawtransaction.cpp /src/digitalcoin/src/
 RUN cd digitalcoin ; make
